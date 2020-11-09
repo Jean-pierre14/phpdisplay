@@ -11,7 +11,12 @@
 
 <body>
     <div class="container" style="padding: 50px 0">
-        <h4>Ajax display CRUD OP</h4>
+        <div class="bg-white p-3 box mb-3">
+            <h4>Ajax display CRUD OP</h4>
+            <p>
+                We gonna use html to display data and jquery come from mongodb backend
+            </p>
+        </div>
         <div class="row">
             <div class="col-md-4">
                 <form action="">
@@ -50,6 +55,10 @@
                         <small>23 mount</small>
                     </div>
                 </div>
+            </div>
+            <div class="col-md-3">
+                <img src="https://scontent.febb6-1.fna.fbcdn.net/v/t1.0-0/s640x640/123833714_3325758467550605_9113912822362667779_o.jpg?_nc_cat=101&ccb=2&_nc_sid=730e14&_nc_eui2=AeGnTh8_RducRqzMQX0dMvp4npSVeK5rJJ6elJV4rmsknk43QhDWvrtjfZs6quGtaXejsjBCE3jTQE0n1rN5hc4W&_nc_ohc=2OSgykOaZMoAX_V6O_3&_nc_ht=scontent.febb6-1.fna&tp=7&oh=d85c29b8c9f376dcdbb73006f5b9b81f&oe=5FD06973"
+                    alt="Grace El bisimwa" class="img-fluid">
             </div>
         </div>
     </div>
