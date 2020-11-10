@@ -36,7 +36,7 @@ if(isset($_POST['action'])){
     }
     if($_POST['action'] == 'views'){
         $limit = $_POST['limit'];
-        $sql = mysqli_query($con, "SELECT * FROM user_account ORDER BY id DESC limit 5");
+        $sql = mysqli_query($con, "SELECT * FROM user_account ORDER BY id DESC limit $limit");
         if(@mysqli_num_rows($sql) > 0){
             while($row = mysqli_fetch_array($sql)):
                 $output .= '

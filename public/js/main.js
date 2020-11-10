@@ -1,5 +1,8 @@
 $(document).ready(function(){
     getData();
+    $(window).scroll(function(){
+        $(window).scrollTop()
+    })
 })
 
 function getData(){
