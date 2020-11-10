@@ -1,6 +1,7 @@
 const express = require('express')
 const {success, error} = require('consola')
 const bodyParser = require('body-parser')
+const db = require('./config/connection')
 
 const PORT = process.env.PORT || 7000
 const app = express()

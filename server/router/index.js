@@ -1,8 +1,12 @@
 const exp = require('express')
 const router = exp.Router()
+const db = require('../config/connection')
 
 router.get('/', (req, res)=>{
-    res.json("Hello mongodb")
+    db.find({}).toArray((err, results)=>{
+        if(err) throw err
+        res.json(results)
+    })
 })
 
 router.post('/', (req, res)=>{
@@ -10,7 +14,7 @@ router.post('/', (req, res)=>{
     if(!username || !name || !email || !password){
         res.json({message: "Empty fields"})
     }else{
-        
+        req.json('passed')
     }
 })
 

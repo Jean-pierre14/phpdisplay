@@ -34,4 +34,25 @@ if(isset($_POST['action'])){
         }
         print $output;
     }
+    if($_POST['action'] == 'views'){
+        $limit = $_POST['limit'];
+        $sql = mysqli_query($con, "SELECT * FROM user_account ORDER BY id DESC limit 5");
+        if(@mysqli_num_rows($sql) > 0){
+            while($row = mysqli_fetch_array($sql)):
+                $output .= '
+                <div class="card m-3">
+                    <div class="card-header p-1"><h2>'.$row['name'].'</h2></div>
+                    <div class="card-body">
+                        <p class="">
+                            <span class="">Username: </span>
+                            <span class="">'.$row['username'].'</span>
+                        </p>
+                    </div>
+                </div>';
+            endwhile;
+        }else{
+            $output .= '<p class="alert alert-success">NO data</p>';
+        }
+        print $output;
+    }
 }
