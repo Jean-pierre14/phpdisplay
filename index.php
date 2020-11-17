@@ -19,8 +19,8 @@ require_once("./config/event.php");
 <body>
     <div class="container">
         <h3>Welcome to PHP OTP verification</h3>
-        <a href="index.php?get=photo">Add photo</a>
-        <?php if(isset($_POST['get'])== 'photo'):?>
+        <a href="index.php?get">Add photo</a>
+        <?php if(isset($_GET['get'])):?>
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="card card-body">
@@ -30,7 +30,7 @@ require_once("./config/event.php");
                             <input type="file" name="photo" id="photo" class="form-control">
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-success">Upload</button>
+                            <button class="btn btn-success" name="upload">Upload</button>
                         </div>
                     </form>
                 </div>
