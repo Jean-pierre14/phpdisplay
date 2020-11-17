@@ -1,7 +1,7 @@
 <?php
 
 
-if(isset($_POST['upload'])){
+if(isset($_POST['uploads'])){
     // header('Location: ../index.php');
     $target_dir = '../uploads';
     $target_file = $target_dir . basename($_FILES['photo']['name']);
