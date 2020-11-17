@@ -19,12 +19,13 @@ require_once("./config/event.php");
 <body>
     <div class="container">
         <h3>Welcome to PHP OTP verification</h3>
-        <a href="index.php?get">Add photo</a>
+        <a href="index.php" class="btn btn-sm shadow btn-success">Home</a>
+        <a href="index.php?get" class="btn btn-sm shadow btn-success">Add photo</a>
         <?php if(isset($_GET['get'])):?>
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="card card-body">
-                    <form action="" method="post">
+                    <form action="./config/upload.php" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="photo">Photo</label>
                             <input type="file" name="photo" id="photo" class="form-control">
