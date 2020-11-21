@@ -42,10 +42,32 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script>
         fetch('http://localhost:7000/').then(res=>{
             res.json().then(data=>{
-                console.log(data)
+                // console.log(data)
+                let output = ''
+                data.forEach((users)=>{
+                    output += `
+                        <div class="shadow p-3 my-2">
+                            <div class="close btn-group">
+                                <button id="edit" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></button>
+                                <button id="delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                            </div>
+                            <h3>${users.name}</h3>
+                            <p class="d-flex justify-content-between align-items-center flex-wrap">
+                                <span>Email</span>
+                                <span>${users.email}</span>
+                            </p>
+                            <p class="d-flex justify-content-between align-items-center flex-wrap">
+                                <span>Phone</span>
+                                <span>${users.phone_no}</span>
+                            </p>
+                        </div>
+                    `
+                })
+                document.getElementById('results').innerHTML = output
             })
         })
     </script>
