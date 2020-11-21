@@ -8,4 +8,15 @@ router.get('/', (req, res) => {
     })
 })
 
+router.post('/', (req, res) => {
+    const { name, email, phone } = req.body
+    if (!name || !email || !phone) {
+        res.json({message: "empty fileds"})
+    } else {
+        User.create(name, email, phone, (result) => {
+            res.json(result)
+        })
+    }
+})
+
 module.exports = router

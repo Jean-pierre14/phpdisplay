@@ -7,5 +7,12 @@ class User{
             cb(results)
         })
     }
+    static create(name, email, phone, cb) {
+        let sql = "INSERT INTO users(name, email, phone_no) VALUES(?,?,?)"
+        db.query(sql, [name, email, phone], (err, result) => {
+            if (err) throw err
+            cb(result)
+        })
+    }
 }
 module.exports = User

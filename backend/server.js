@@ -1,5 +1,6 @@
 const exp = require('express')
 const cors = require('cors')
+const bp = require('body-parser')
 const app = exp()
 const PORT = process.env.PORT || 7000
 const { success, error } = require('consola')
@@ -11,6 +12,8 @@ db.connect((err) => {
 })
 
 app.use(cors())
+app.use(bp.urlencoded({ extended: false }))
+app.use(bp.json())
 app.use('/', require('./routes/users'))
 
 app.listen(PORT, (err) => {
