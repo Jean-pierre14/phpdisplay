@@ -14,6 +14,7 @@
         <div class="row">
             <div class="col-md-5 p-2">
                 <form action="">
+                    <div id="error"></div>
                     <div class="form-row">
                         <div class="form-group col-md-5">
                             <label for="name">Name</label>
@@ -44,5 +45,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="./crud.js"></script>
+    <script>
+        let button = document.getElementById('del')
+        button.addEventListener('click', function(){
+            alert("Delete")
+        })
+    </script>
 </body>
 </html>
