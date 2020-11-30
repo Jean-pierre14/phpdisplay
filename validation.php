@@ -10,6 +10,7 @@
 <body>
     <h3>Validation form using php</h3>
     <?php
+        $errors = [];
         include("./config/db.php");
 
         if(isset($_POST['name'])):
@@ -24,9 +25,18 @@
             if(empty($pass)){array_push($errors, "Your Password is required");}
 
             // checking in the database if datas are not match
+            $check = mysqli_query($con, "SELECT * FROM users");
+            $data = mysqli_fetch_assoc($check);
+            
+            if($name == $data['name']){array_push($errors, "This name is used");}
+            if($name == $data['email']){array_push($errors, "This email is used");}
+            if($name == $data['pass']){array_push($errors, "This Passowrd is used");}
             
         endif;
     ?>
+    <?php foreach($errors as $error):?>
+    <?php print '<p class="alert alert-danger">'.$error.'</p>';?>
+    <?php endforeach;?>
     <form action="" method="post">
         <div class="form-group">
             <label for="name">name</label>
