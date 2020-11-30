@@ -7,8 +7,8 @@ fetch('http://localhost:7000/').then(res => {
                     output += `
                         <div class="border-bottom p-3 my-2">
                             <div class="close btn-group">
-                                <button id="edit" data-id="${users.id}" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></button>
-                                <a href="#" id="del" data-id="${users.id}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                <button id="edit" data-id="${users.id}" class="btn btn-sm btn-info">Edit</button>
+                                <a href="#" id="del" data-id="${users.id}" class="btn btn-sm btn-danger">delete</a>
                             </div>
                             <h3>${users.name}</h3>
                             <p class="d-flex justify-content-between align-items-center flex-wrap">
