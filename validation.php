@@ -13,7 +13,18 @@
         include("./config/db.php");
 
         if(isset($_POST['name'])):
-            print "Clicked";
+
+            $name = mysqli_real_escape_string($con, htmlentities(trim($_POST['name'])));
+            $email = mysqli_real_escape_string($con, htmlentities(trim($_POST['email'])));
+            $pass = mysqli_real_escape_string($con, htmlentities(trim($_POST['pass'])));
+
+            // checking if the values are in our variables
+            if(empty($name)){array_push($errors, "Your name is required");}
+            if(empty($email)){array_push($errors, "Your Email is required");}
+            if(empty($pass)){array_push($errors, "Your Password is required");}
+
+            // checking in the database if datas are not match
+            
         endif;
     ?>
     <form action="" method="post">
