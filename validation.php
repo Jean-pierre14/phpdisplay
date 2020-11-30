@@ -9,6 +9,13 @@
 
 <body>
     <h3>Validation form using php</h3>
+    <?php
+        include("./config/db.php");
+
+        if(isset($_POST['name'])):
+            print "Clicked";
+        endif;
+    ?>
     <form action="" method="post">
         <div class="form-group">
             <label for="name">name</label>
@@ -16,11 +23,16 @@
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="Email@gmail.com" class="form-control">
+            <input type="text" name="email" id="email" placeholder="Email@gmail.com" class="form-control">
         </div>
         <div class="form-group">
             <label for="pass">Password</label>
             <input type="password" name="pass" id="pass" class="form-control">
+        </div>
+        <div class="form-group">
+            <button type="submit" name="submit" class="btn btn-success">
+                Submit
+            </button>
         </div>
     </form>
 </body>
