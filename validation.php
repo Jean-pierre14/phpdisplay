@@ -25,13 +25,27 @@
             if(empty($pass)){array_push($errors, "Your Password is required");}
 
             // checking in the database if datas are not match
-            $check = mysqli_query($con, "SELECT * FROM user_account");
-            $data = @mysqli_fetch_assoc($check);
+            $check_u = mysqli_query($con, "SELECT * FROM users WHERE username = '$name'");
+            $check_e = mysqli_query($con, "SELECT * FROM users WHERE email = '$email'");
             
-            if($name == $data['name']){array_push($errors, "This name is used");}
-            if($email == $data['email']){array_push($errors, "This email is used");}
+            if(mysqli_num_rows($check_u)>0){
+                array_push($errors, "this username is used");
+            }
+            if(mysqli_num_rows($check_e)>0){
+                array_push($errors, "this email is used");
+            }
             
             
+            
+            if(count($errors) == 0){
+                $password = md5($pass);
+                $sql = mysqli_query($con, "INSERT INTO users SET username='$name', email='$email', pass='$password'");
+                if($sql){
+                    print "Success";
+                }else{
+                    print "Failed";
+                }
+            }
 
         endif;
     ?>
