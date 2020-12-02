@@ -25,13 +25,14 @@
             if(empty($pass)){array_push($errors, "Your Password is required");}
 
             // checking in the database if datas are not match
-            $check = mysqli_query($con, "SELECT * FROM users");
-            $data = mysqli_fetch_assoc($check);
+            $check = mysqli_query($con, "SELECT * FROM user_account");
+            $data = @mysqli_fetch_assoc($check);
             
             if($name == $data['name']){array_push($errors, "This name is used");}
-            if($name == $data['email']){array_push($errors, "This email is used");}
-            if($name == $data['pass']){array_push($errors, "This Passowrd is used");}
+            if($email == $data['email']){array_push($errors, "This email is used");}
             
+            
+
         endif;
     ?>
     <?php foreach($errors as $error):?>
