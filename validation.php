@@ -11,6 +11,9 @@
     <h3>Validation form using php</h3>
     <?php
         $errors = [];
+        $name = '';
+        $email = '';
+        $pass = '';
         include("./config/db.php");
 
         if(isset($_POST['name'])):
@@ -35,8 +38,6 @@
                 array_push($errors, "this email is used");
             }
             
-            
-            
             if(count($errors) == 0){
                 $password = md5($pass);
                 $sql = mysqli_query($con, "INSERT INTO users SET username='$name', email='$email', pass='$password'");
@@ -46,7 +47,6 @@
                     print "Failed";
                 }
             }
-
         endif;
     ?>
     <?php foreach($errors as $error):?>
@@ -55,15 +55,17 @@
     <form action="" method="post">
         <div class="form-group">
             <label for="name">name</label>
-            <input type="text" name="name" id="name" placeholder="enter your name" class="form-control">
+            <input type="text" name="name" value="<?php print $name;?>" id="name" placeholder="enter your name"
+                class="form-control">
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="text" name="email" id="email" placeholder="Email@gmail.com" class="form-control">
+            <input type="text" name="email" id="email" value="<?php print $email;?>" placeholder="Email@gmail.com"
+                class="form-control">
         </div>
         <div class="form-group">
             <label for="pass">Password</label>
-            <input type="password" name="pass" id="pass" class="form-control">
+            <input type="password" name="pass" value="<?php print $pass;?>" id="pass" class="form-control">
         </div>
         <div class="form-group">
             <button type="submit" name="submit" class="btn btn-success">

@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # send would-be 404 request to Craft
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URL} !^/(favicon\.ico[apple-touch-icon.*\png])$ [NC]
+    RewriteRule (.+) index.php?p=$1 [QSA,L]
+</IfModule>
