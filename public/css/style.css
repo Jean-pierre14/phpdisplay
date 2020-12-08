@@ -4,3 +4,20 @@
     box-sizing: border-box;
 }
 
+.content{
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #ccc;
+}
+.form input{
+    padding: 8px;
+    border: 2px solid #eee;
+    border-radius: 4px;
+    margin: 10px 0;
+    outline: none;
+}
+.form label{
+    display: block;
+}

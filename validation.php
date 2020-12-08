@@ -50,10 +50,13 @@
             }
         endif;
     ?>
-    <?php foreach($errors as $error):?>
+    <div class="content">
+        <div class="row">
+            <div class="col-md-5">
+                <?php foreach($errors as $error):?>
     <?php print '<p class="alert alert-danger">'.$error.'</p>';?>
     <?php endforeach;?>
-    <form action="" method="post">
+    <form action="" method="post" class="form">
         <div class="form-group">
             <label for="name">name</label>
             <input type="text" name="name" value="<?php print $name;?>" id="name" placeholder="enter your name"
@@ -74,6 +77,12 @@
             </button>
         </div>
     </form>
+            </div>
+            <div class="col-md-7">
+                <h3>Data from the db</h3>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
