@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validation</title>
+    <link rel="stylesheet" href="./public/css/style.css">
 </head>
 
 <body>
@@ -32,10 +33,10 @@
             $check_e = mysqli_query($con, "SELECT * FROM users WHERE email = '$email'");
             
             if(mysqli_num_rows($check_u)>0){
-                array_push($errors, "this username is used");
+                array_push($errors, "This username is used");
             }
             if(mysqli_num_rows($check_e)>0){
-                array_push($errors, "this email is used");
+                array_push($errors, "This email is used");
             }
             
             if(count($errors) == 0){
