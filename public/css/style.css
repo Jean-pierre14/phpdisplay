@@ -28,6 +28,7 @@ body{
 }
 .group label, .group input{
     display: block;
+    margin: 10px 0;
 }
 .group input{
     position: relative;
@@ -51,6 +52,7 @@ body{
 }
 .group.success small{
     color: rgb(0, 199, 96);
+    display: none;
 }
 
 button{
