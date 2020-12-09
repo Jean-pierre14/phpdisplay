@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+</head>
+<body>
+    <div class="content">
+        <h4>Form validation using Javascript</h4>
+        <form id="form" action="" method="post">
+            <div class="group">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Username" class="input">
+                <small>error</small>
+            </div>
+            <div class="group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="me@gmail.com" class="input">
+                <small>error</small>
+            </div>
+            <div class="group">
+                <label for="pass">Password</label>
+                <input type="password" name="pass" id="pass" placeholder="********" class="input">
+                <small>error</small>
+            </div>
+            <button>Submit</button>
+        </form>
+    </div>
+    <script src="./public/js/script.js"></script>   
+</body>
+</html>

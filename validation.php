@@ -83,6 +83,20 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const name = document.getElementById('name')
+        const email = document.getElementById('email')
+        const pass = document.getElementById('pass')
+
+        const form = document.getElementsByClassName('form')
+
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            
+            alert("Cool")
+        })
+    </script>
 </body>
 
 </html>
